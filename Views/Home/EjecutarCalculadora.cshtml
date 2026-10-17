@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "MI Calculadora v.1.0";
+} 
+<div class="text-center">  
+    <h1 class="display-4" welcolme </h1>
+        </div>
+<!-- Referencia al archivo CSS limpio -->
+<link rel="stylesheet" href="~/css/calculadora.css" />
+
+<div class="text-center">
+    <h2>Mi Calculadora Web</h2>
+</div>
+
+<div class="calc-container">
+    <form id="calcForm" asp-action="Calcular" method="post">
+
+        <div class="display-container">
+            <input type="text" id="pantalla" name="expresion" class="main-display" value="@ViewBag.Resultado" readonly />
+            <div id="pantalla-previa" class="preview-display"></div>
+        </div>
+
+        <div class="calc-grid">
+            <button type="button" class="calc-btn btn-clear" onclick="limpiar()" style="grid-column: span 2;">C</button>
+            <button type="button" class="calc-btn btn-clear" onclick="borrarUltimo()" style="grid-column: span 2;">⌫</button>
+
+            <button type="button" class="calc-btn" onclick="agregar('7')">7</button>
+            <button type="button" class="calc-btn" onclick="agregar('8')">8</button>
+            <button type="button" class="calc-btn" onclick="agregar('9')">9</button>
+            <button type="button" class="calc-btn btn-op" onclick="agregar(' / ')">/</button>
+
+            <button type="button" class="calc-btn" onclick="agregar('4')">4</button>
+            <button type="button" class="calc-btn" onclick="agregar('5')">5</button>
+            <button type="button" class="calc-btn" onclick="agregar('6')">6</button>
+            <button type="button" class="calc-btn btn-op" onclick="agregar(' * ')">*</button>
+
+            <button type="button" class="calc-btn" onclick="agregar('1')">1</button>
+            <button type="button" class="calc-btn" onclick="agregar('2')">2</button>
+            <button type="button" class="calc-btn" onclick="agregar('3')">3</button>
+            <button type="button" class="calc-btn btn-op" onclick="agregar(' - ')">-</button>
+
+            <button type="button" class="calc-btn" onclick="agregar('0')" style="grid-column: span 2;">0</button>
+            <button type="submit" class="calc-btn btn-equal">=</button>
+            <button type="button" class="calc-btn btn-op" onclick="agregar(' + ')">+</button>
+        </div>
+    </form>
+</div>
+
+<!-- Referencia al archivo JavaScript limpio -->
+<script src="~/js/calculadora.js"></script>
